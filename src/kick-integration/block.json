@@ -1,0 +1,37 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "streamweasels/streamweasels-kick-integration",
+	"version": "0.1.0",
+	"title": "StreamWeasels Kick Integration",
+	"category": "streamweasels",
+	"icon": "smiley",
+	"description": "StreamWeasels Kick Integration - Best for Embedding many Kick streams.",
+	"supports": {
+		"html": false,
+		"align": ["wide", "full"]
+	},
+	"textdomain": "streamweasels-kick-integration",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "swki",
+	"attributes": {
+		"layout": {
+            "type": "string",
+            "default": "wall"
+		},		
+		"channels": {
+            "type": "string",
+            "default": "kick"
+		},
+		"limit": {
+            "type": "number",
+            "default": 4
+		},
+		"colour": {
+            "type": "string",
+            "default": "light"
+		}				
+	}
+}

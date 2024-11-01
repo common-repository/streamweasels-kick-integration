@@ -1,0 +1,218 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.cp-swki {
+	position: relative;
+	&[data-colour="light"] {
+		--SWKItileBgColour: #F7F7F8;
+		--SWKItileTitleColour: #1F1F23;
+		--SWKItileSubtitleColour: #53535F;
+		--SWKIhoverColour: #53fc18;
+	}
+	&[data-colour="dark"] {
+		--SWKItileBgColour: #0E0E10;
+		--SWKItileTitleColour: #DEDEE3;
+		--SWKItileSubtitleColour: #adb8a8;
+		--SWKIhoverColour: #53fc18;
+	}
+	&[data-columns="4"] {
+		grid-template-columns: repeat(4, minmax(100px, 1fr));
+	}
+	&[data-columns="3"] {
+		grid-template-columns: repeat(3, minmax(100px, 1fr));
+	}
+	&[data-columns="2"] {
+		grid-template-columns: repeat(2, minmax(100px, 1fr));
+	}
+	&[data-columns="1"] {
+		grid-template-columns: repeat(1, minmax(100px, 1fr));
+	}
+	&[data-layout="wall"], &[data-layout="vods"] {
+		display: grid;
+		position: relative;
+		grid-gap: 10px;
+		.cp-swki__stream {
+			position: relative;
+			background-color: var(--SWKItileBgColour);
+			color: var(--SWKItileTitleColour);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			border-radius: 5px;
+			aspect-ratio: 25 / 14;
+			text-transform: uppercase;
+			font-weight: 700;
+			&:before {
+				content: "LIVE";
+				background:#E91916;
+                height: 20px;
+                border-radius: 2px;
+                padding: 0 3px;
+                color: #f1f1f1;
+                font-weight: bold;
+                font-size: 13px!important;    
+				text-transform: uppercase;
+				border-radius: 5px;
+				font-weight: 600;
+				line-height: 18px!important;    
+				position: absolute;
+				left:8px;
+				top:8px;
+				z-index: 1;
+			}
+			&:after {
+				content: "";
+				position: absolute;
+				bottom: 15px;
+				left: 10px;
+				width: 40px;
+				height: 40px;
+				border-radius: 50%;
+				background: #f1f1f1;
+				z-index: 1;
+			}		
+		}		
+	}
+	&[data-layout="feature"] {
+		position: relative;
+		overflow: hidden;
+		width: 100%;
+		.cp-swki__container {
+			display: flex;
+			transition: transform 0.3s ease-out; 
+			width: calc(100%);
+		  }		
+		.cp-swki__stream {
+			position: relative;
+			background-color: var(--SWKItileBgColour);
+			color: var(--SWKItileTitleColour);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			border-radius: 5px;
+			aspect-ratio: 25 / 14;
+			text-transform: uppercase;
+			font-weight: 700;			
+			width: calc(100% / 3); // as 3 slides are shown at a time
+			flex: 0 0 calc(100% / 3);
+			transform: scale(0.8);
+			&.active {
+				transform: scale(1);
+			}
+			&:before {
+				content: "LIVE";
+				background:#E91916;
+                height: 20px;
+                border-radius: 2px;
+                padding: 0 3px;
+                color: #f1f1f1;
+                font-weight: bold;
+                font-size: 13px!important;    
+				text-transform: uppercase;
+				border-radius: 5px;
+				font-weight: 600;
+				line-height: 18px!important;    
+				position: absolute;
+				left:8px;
+				top:8px;
+				z-index: 1;
+			}	
+			&:after {
+				content: "";
+				position: absolute;
+				bottom: 15px;
+				left: 10px;
+				width: 40px;
+				height: 40px;
+				border-radius: 50%;
+				background: #f1f1f1;
+				z-index: 1;
+			}				
+		}		
+		button {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			background: rgba(0,0,0,0.5);
+			color: #fff;
+			border: none;
+			padding: 10px 15px;
+			cursor: pointer;
+			z-index: 9;
+		
+			&:disabled {
+			  background: rgba(0,0,0,0.2);
+			}
+		
+			&:hover {
+			  background: rgba(0,0,0,0.7);
+			}
+		
+			&:focus {
+			  outline: none;
+			}
+		
+			&.cp-swki__arrow-left {
+			  left: 0;
+			}
+		
+			&.cp-swki__arrow-right {
+			  right: 0;
+			}
+		}
+	}
+	&[data-layout="status"] {
+		display: flex;
+		.cp-swki__twitch-logo {
+		    width: 52px;
+			height: 52px;
+			background: #000;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: #fff;
+			position: relative;
+			border-top-left-radius: 5px;
+			border-bottom-left-radius: 5px;
+			span {
+				font-size: 40px;
+				position: relative;
+				top: 0;
+				left: 0;
+				width: 52px;
+				height: 52px;
+				background-image: url("data:image/svg+xml,%3Csvg version='1.0' xmlns='http://www.w3.org/2000/svg' width='150.000000pt' height='150.000000pt' viewBox='0 0 150.000000 150.000000' preserveAspectRatio='xMidYMid meet'%3E%3Cg transform='translate(0.000000,150.000000) scale(0.100000,-0.100000)'%0Afill='%2353fc18' stroke='none'%3E%3Cpath d='M270 750 l0 -540 180 0 180 0 0 120 0 120 60 0 60 0 0 -60 0 -60 60%0A0 60 0 0 -60 0 -60 180 0 180 0 0 180 0 180 -60 0 -60 0 0 60 0 60 -60 0 -60%0A0 0 60 0 60 60 0 60 0 0 60 0 60 60 0 60 0 0 180 0 180 -180 0 -180 0 0 -60 0%0A-60 -60 0 -60 0 0 -60 0 -60 -60 0 -60 0 0 120 0 120 -180 0 -180 0 0 -540z'/%3E%3C/g%3E%3C/svg%3E");
+				background-size: 52px 52px;
+				vertical-align: top;
+			}
+		}
+		.cp-swki__player-list {
+			position: relative;
+			max-width: 300px;
+			background: #f7f7f8;
+			border-top-right-radius: 5px;
+			border-bottom-right-radius: 5px;
+			color: #1F1F23;
+			height: 52px;
+			padding: 0 10px;
+		}
+		.cp-swki__stream {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			p {
+				margin:0;
+				font-size: 15px;
+				strong {
+					text-transform: capitalize;
+					font-weight: 700;
+				}
+			}
+		}
+	}			
+}

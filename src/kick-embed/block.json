@@ -1,0 +1,45 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "streamweasels/streamweasels-kick-embed",
+	"version": "0.1.0",
+	"title": "StreamWeasels Kick Embed",
+	"category": "streamweasels",
+	"icon": "smiley",
+	"description": "StreamWeasels Kick Embed - Embed a single Kick stream.",
+	"keywords": [ "kick", "embed" ],
+	"attributes": {
+		"channel": {
+            "type": "string",
+            "default": "monstercat"
+		},        
+		"autoplay": {
+            "type": "boolean",
+            "default": false
+		},	
+		"muted": {
+            "type": "boolean",
+            "default": false
+		},
+		"width": {
+            "type": "string",
+            "default": ""
+		},
+		"height": {
+            "type": "string",
+            "default": ""
+		}		
+	},
+	"supports": {
+		"align": true,
+		"anchor": true,
+		"color": { 
+        	"background": true,
+        	"gradients": true
+    	}		
+	},
+	"textdomain": "streamweasels",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}
